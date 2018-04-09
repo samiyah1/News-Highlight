@@ -8,4 +8,13 @@
         <title> Welcome to your website </title>
     
     </head>
+    <body>
+        <!-- Headlines section -->
+        <h3> Headline News</h3>
+        <ul>
+            {% for headlines_news in headlines %}
+            <li>{{ headline_news.title }}</li>
+            {% endfor %}
+        </ul>
+    </body>
 </html>
