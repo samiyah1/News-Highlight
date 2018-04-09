@@ -3,5 +3,11 @@ class Source:
     Source class to define Source Objects
     """
 
-    def __init__(self,sources):
-        self.sources = 'bbc-news,the-verge'
+    def __init__(self,id,name,description,url,category,language,country):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.url = 'https://newsapi.org/v2/sources'
+        self.category = category
+        self.language = language
+        self.country = country
