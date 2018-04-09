@@ -12,9 +12,24 @@
         <!-- Headlines section -->
         <h3> Headline News</h3>
         <ul>
-            {% for headlines_news in headlines %}
+            {% for top-headlines_news in headlines %}
             <li>{{ headline_news.title }}</li>
             {% endfor %}
         </ul>
+
+        <!-- Sources -->
+        <h3> Sources </h3>
+        <ul>
+            {% for sources_news in sources %}
+            <li> {{ sources_news.title }}</li>
+            {% endfor %}
+         </ul>
+         <!-- Everything -->
+         <h3> Everything </h3>
+         <ul>
+         {% for everything_news in everything %}
+         </ul>
+         <li> {{ everything.title }}</li>
+         {% endfor %}
     </body>
 </html>
