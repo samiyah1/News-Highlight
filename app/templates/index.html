@@ -10,7 +10,7 @@
     </head>
     <body>
         <!-- Headlines section -->
-        <h3> Headline News</h3>
+        <h3> Top-Headline News</h3>
         <ul>
             {% for top-headlines_news in headlines %}
             <li>{{ headline_news.title }}</li>
@@ -29,7 +29,7 @@
          <ul>
          {% for everything_news in everything %}
          </ul>
-         <li> {{ everything.title }}</li>
+         <li> {{ everything_news.title }}</li>
          {% endfor %}
     </body>
 </html>
