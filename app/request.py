@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import news_Source,news_Article
+from .models import News_Source,News_Article
 
 # Getting Api Key
 api_Key = None
@@ -22,7 +22,7 @@ def get_sources(category):
 	'''
 	get_sources_url = sources_base_url.format(category)
 
-	with urllib.request.urlopen(get_sources_url,data=None) as url:
+	with urllib.request.urlopen(get_sources_url) as url:
 		get_sources_data = url.read()
 		get_sources_response = json.loads(get_sources_data)
 		sources_results = None
@@ -49,7 +49,7 @@ def process_sources(sources_results):
 		url = source_item.get('url')
 		category = source_item.get('category')
 
-		source_object = news_Source(id,name,description,url,category)
+		source_object = News_Source(id,name,description,url,category)
 		sources_list.append(source_object)
 
 	return sources_list
@@ -89,7 +89,7 @@ def process_articles(articles_results):
 		date = article_item.get('publishedAt')
 
 		if date and author and image:
-			article_object = news_Article(author,title,description,url,image,date)
+			article_object = News_Article(author,title,description,url,image,date)
 			articles_list.append(article_object)
 
 	return articles_list
