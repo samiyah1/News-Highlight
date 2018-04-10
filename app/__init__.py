@@ -16,6 +16,7 @@ def create_app(config_name):
     # Will add the articles
     # Registering the blueprint
     from .main import main_blueprint
+
     app.register_blueprint(main_blueprint)
     
     
