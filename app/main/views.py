@@ -1,7 +1,7 @@
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..request import get_news_sources,get_news_articles
-from .models import news
+
 # Views
 
 
@@ -28,4 +28,9 @@ def source(news_id):
     """
     View news page function that returns the news_source details page and its data
     """
-    return render_template('news.html',id = news_id)
+    # Getting articles according to source to source chosen
+    articles = get_articles(id)
+    source_news_id = id.upper()
+    title = f'{source_news_id} - Top Articles'
+
+    return render_template('source.html',title=title,id=source_news_id,articles=articles)
