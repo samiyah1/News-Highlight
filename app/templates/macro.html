@@ -1,0 +1,24 @@
+{% macro displaySourceList(news_sources_list) %}
+
+    {% for sources in news_sources_list %}
+       <div class="col-xs-12 col col-lg-2 movie-card">
+           <img src="{{ news_source.image }}" alt="{{ news_source.title }} poster" class="img-responsive">
+           <li class="text-center">
+               <a href="/source/{{news_sources.id}}">
+                   {{ movie.title|truncate(10)}}
+               </a>
+           </li>
+       </div>
+<!-- Displaying reviews macro -->
+{% macro displayingnews_articles(news_articles_list) %}
+  {% for review in review_list %}
+   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <h2> {{ news_article.title }} </h2>
+    <P> {{ news_article.news_article | truncate(30) }}</P>
+   </div>
+
+    {% endfor %}
+
+{% endmacro %}
+
+ 

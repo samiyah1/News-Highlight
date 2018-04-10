@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title>{{ title }}</title>
-        {% else %}
-        <title> Welcome to your website </title>
-    
-    </head>
-    <body>
-        <!-- Headlines section -->
-        <h3> Top-Headline News</h3>
-        <ul>
-            {% for top-headlines_news in headlines %}
-            <li>{{ headline_news.title }}</li>
-            {% endfor %}
-        </ul>
-
-        <!-- Sources -->
-        <h3> Sources </h3>
-        <ul>
-            {% for sources_news in sources %}
-            <li> {{ sources_news.title }}</li>
-            {% endfor %}
-         </ul>
-         <!-- Everything -->
-         <h3> Everything </h3>
-         <ul>
-         {% for everything_news in everything %}
-         </ul>
-         <li> {{ everything_news.title }}</li>
-         {% endfor %}
-    </body>
-</html>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+  <!-- style Block -->
+  {{% block styles %}}
+  {{ super() }}
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
