@@ -11,12 +11,11 @@ def index():
 	View Function that returns the index page and its data
 	"""
 	# Getting sources according to category
-    business_news_sources = get_news_sources('business')
-    general_news_sources = get_news_sources('general')
-    sport_news_sources = get_news_sources('sport')
-    entertainment_news_sources = get_news_sources('entertainment')
-    technology_news_sources = get_news_sources('technology')
-
+    business_news_sources = get_sources('business')
+    general_news_sources = get_sources('general')
+    sport_news_sources = get_sources('sport')
+    entertainment_news_sources = get_sources('entertainment')
+    technology_news_sources = get_sources('technology')
 
     title = 'Welcome to the hot News Ever'
 
