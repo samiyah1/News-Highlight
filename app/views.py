@@ -1,27 +1,31 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from .request import get_news_sources,get_news_articles
+
 # Views
 
 
 @app.route('/')
 def index():
-    
     """
-    View root page function that returns the index page and its data
-    """
-    # Getting popular News
+	View Function that returns the index page and its data
+	"""
+	# Getting sources according to category
+    business_news_sources = get_news_sources('business')
+    general_news_sources = get_news_sources('general')
+    sport_news_sources = get_news_sources('sport')
+    entertainment_news_sources = get_news_sources('entertainment')
+    technology_news_sources = get_news_sources('technology')
 
-    top_headline_news = get_news('top-headlines')
-    sources_news = get_news('sources')
-    everything_news = get_news('everything')
+
     title = 'Welcome to the hot News Ever'
-    return render_template('index.html',title = title, top_headlines = top_headline_news,sources = sources_news,everything = everything_news)
+
+    return render_template('index.html',title = title,business=business_news_sources,general= general_news_sources,sport=  sport_news_sources,entertainment= entertainment_news_sources,technology= technology_news_sources )
 
 
-@app.route('/news/<news_id>')
+@app.route('/news_source/<id>')
 def source(news_id):
     """
-    View news page function that returns the news details page and its data
+    View news page function that returns the news_source details page and its data
     """
     return render_template('news.html',id = news_id)
