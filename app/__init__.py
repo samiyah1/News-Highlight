@@ -3,16 +3,19 @@ from flask_bootstrap import Bootstrap
 from config import config_options
 
 
-bootstrap = Bootstrap()
 
+
+# Initializing application
+app = Flask(__name__,instance_relative_config = True)
 
 def create_app(config_name):
     app = Flask(__name__)
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
     
-    # Initializing Flask Extensions
-    bootstrap.init_app(app)
+    # Initializing Flask Extension
+    bootstrap = Bootstrap(app) 
+    
     # Will add the articles
     # Registering the blueprint
     from .main import main as main_blueprint
