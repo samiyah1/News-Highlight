@@ -1,32 +1,45 @@
-{% extends 'base.html' %}
-{% import 'macro.html' as macro %}
-  <!-- style Block -->
-  {% block styles %}
-  {{ super() }}
-  
+{% extends 'base.html'%}
+{% include 'navbar.html'%}
+{% import 'macro.html' as macro%}
+    <!-- Styles block -->
+    {% block styles%}
+    {{ super() }}
 
-  {% endblock %}
+<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {% endblock %}
+
   <!-- Content Block -->
-  {% block body %}
   
+  {% block body %}
+<h1 style="text-align:center">  News Highlights</h1>
+
+    <div class="jumbotron" style="height:450px;background-image:url(static/Images/8000.jpg);background-repeat:no-repeat">
+
+ </div>
+<div class="column">
       <!-- General Sources section  -->
       <hr />
-      <div class="source_section">
-          <h3 id=general>General News</h3>
-          <ul>
-              <div class="row">
-                 {{ macro.displayNewsList(general) }}
-              </div>
-          </ul>
-      </div>
+<div class="general_source_section" >
+          <h3>General News</h3>
+ <div class="col-md-3">
+   {{ macro.displayNewsList(general) }}
+  </div>
+ </div>
+
+
    <!-- Business Sources section  -->
       <hr />
-      <div class="source_section">
+
+      <div class="source_section" >
           <h3>Business News</h3>
           <ul>
-              <div class="row">
+
+              <div class="col-md-3 ">
+
                  {{ macro.displayNewsList(business) }}
               </div>
+
           </ul>
       </div>
       <!-- Sport Sources section  -->
@@ -34,17 +47,17 @@
       <div class="source_section">
           <h3>Sports News</h3>
           <ul>
-              <div class="row">
+              <div class="col-md-3">
                  {{ macro.displayNewsList(sports) }}
               </div>
           </ul>
       </div>
       <!-- Entertainment Sources section  -->
       <hr />
-      <div class="source_section">
+      <div class="source_section" >
           <h3>Entertainment News</h3>
           <ul>
-              <div class="row">
+              <div class="col-md-3">
                  {{ macro.displayNewsList(entertainment) }}
               </div>
           </ul>
@@ -54,13 +67,13 @@
       <div class="source_section">
           <h3>Technology News</h3>
           <ul>
-              <div class="row">
+              <div class="col-md-3">
                  {{ macro.displayNewsList(technology) }}
               </div>
           </ul>
       </div>
    
   </main>
-
+</div>
  
   {% endblock %}
